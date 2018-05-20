@@ -1,0 +1,94 @@
+﻿<Window x:Class="Piano_Key.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Piano_Key"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1000">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/WhiteKeyStyle.xaml"/>
+                <ResourceDictionary Source="/Resource/BlackKeyStyle.xaml"/>
+                <ResourceDictionary Source="/Resource/MenuStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="161*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="142*"/>
+        </Grid.RowDefinitions>
+        <Button  Content="1"  Grid.RowSpan="2" Grid.Row="1" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="2" Grid.Row="1" Grid.Column="1"  Grid.RowSpan="2" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="3" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="2" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="4" Grid.Column="3"   Grid.RowSpan="2" Grid.Row="1" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="5" Grid.Row="1" Grid.Column="4"  Grid.RowSpan="2" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="6" Grid.Row="1" Grid.Column="5" Grid.RowSpan="2" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="7" Grid.Column="6"  Grid.RowSpan="2"  Grid.Row="1" Style="{DynamicResource WhiteKey}"/>
+        <Button Content="1" Grid.Row="1" Grid.Column="7" Grid.RowSpan="2" Style="{DynamicResource WhiteKey}"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="8"  >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="" Grid.Column="1" Style="{DynamicResource BlackKey}"/>
+            <Button Content="" Grid.Column="3" Style="{DynamicResource BlackKey}"/>
+            <Button Content="" Grid.Column="5" Style="{DynamicResource BlackKey}"/>
+            <Button Content="" Grid.Column="7" Style="{DynamicResource BlackKey}"/>
+            <Button Content="" Grid.Column="9" Style="{DynamicResource BlackKey}"/>
+            <Button Content="" Grid.Column="11" Style="{DynamicResource BlackKey}"/>
+        </Grid>
+        <Grid Background="#FF0084FC" Grid.ColumnSpan="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="122*"/>
+            </Grid.RowDefinitions>
+            <ToolBarPanel Background="#FF101E35">
+                <ToolBar >
+                    <Button Content="练习音名" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="练习唱名" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="音/唱名混合练习" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="速度设置" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="全部显示" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="暂停" Style="{DynamicResource menu_btn}"/>
+                    <Button Content="查看发音" Style="{DynamicResource menu_btn}"/>
+                </ToolBar>
+            </ToolBarPanel>
+            <TextBlock Text="{Binding Txt}" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="390,14,389,13" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="3" ScaleY="3"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>

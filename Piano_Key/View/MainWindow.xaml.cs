@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Piano_Key.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Piano_Key
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
+
     }
 }
